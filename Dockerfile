@@ -45,7 +45,7 @@ COPY condarc /opt/conda/.condarc
 # RUN if [ "${RAPIDS_BRANCH}" = "main" ]; then sed -i '/nightly/d;/dask\/label\/dev/d' /opt/conda/.condarc; fi
 
 RUN mamba install -y -n base \
-        "rapids=${RAPIDS_VER}.*" \
+        "cudf=${RAPIDS_VER}.*" \
         "dask-sql=${DASK_SQL_VER%.*}.*" \
         "python=${PYTHON_VER}.*" \
         "cuda-version=${CUDA_VER%.*}.*" \
